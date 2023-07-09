@@ -20,7 +20,7 @@ namespace Lab3.Controllers
         public async Task<UserModel> addUser(UserInputModel userInputModel)
         {
             UserModel userModel = new UserModel();
-            userModel.Id = IdGenerator.GenerateId();
+           
             userModel.name = userInputModel.name;
             userModel.email = userInputModel.email;
             userModel.password = userInputModel.password;
@@ -42,7 +42,7 @@ namespace Lab3.Controllers
 
             if (result != null) { 
                 if(userInputModel.name.Length>0)
-                    result.name = userInputModel.name;
+                    result.name = userInputModel.email;
                     result.email = userInputModel.email;
                     result.password = userInputModel.password;
               await _dbContext.SaveChangesAsync();
