@@ -42,8 +42,10 @@ namespace Lab3.Controllers
 
             if (result != null) { 
                 if(userInputModel.name.Length>0)
-                    result.name = userInputModel.email;
+                    result.name = userInputModel.name;
+                if (userInputModel.email.Length > 0)
                     result.email = userInputModel.email;
+                if (userInputModel.password.Length > 0)
                     result.password = userInputModel.password;
               await _dbContext.SaveChangesAsync();
                 return result;
